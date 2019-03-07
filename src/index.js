@@ -1,19 +1,14 @@
 import _ from 'lodash';
-import './style.css';
-import Icon from './lufei.png';
-import Data from './data.xml';
+import printMe from './print.js';
 
 function component() {
 	var element = document.createElement('div');
+	var btn = document.createElement('button');
 
 	element.innerHTML = _.join(['Hello','webpack。中文'],' ');
-	element.classList.add('hello');
-	// 将图像添加到现有div
-	var myIcon = new Image();
-	myIcon.src = Icon;
-	element.appendChild(myIcon);
-
-	console.log(Data);
+	btn.innerHTML = 'Click me anb check the console!';
+	btn.onclick = printMe;
+	element.appendChild(btn);
 
 	return element;
 }
